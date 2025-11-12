@@ -1,324 +1,493 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Studio AVA - Perfil Profesional</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Studio AVA - Perfil Profesional</title>
 
-<!-- Fuente elegante -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Fuente principal -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="img/favicon.ico">
 
-<style>
+  <meta name="description" content="Studio AVA — Maquillaje profesional, automaquillaje, sesiones fotográficas y experiencias de belleza personalizadas.">
+  
+  <style>
     :root {
-        --violeta: #b000ff;
-        --verde-hoja: #38ff82;
-        --negro: #1a1a1a;
-        --gris: #f5f5f5;
+      --violeta: #6b009b;
+      --verde-hoja: #00471a;
+      --negro: #1a1a1a;
+      --gris: #f5f5f5;
+      --borde: rgba(0, 0, 0, 0.06);
+    }
+
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
-        margin: 0;
-        font-family: 'Poppins', sans-serif;
-        background: var(--gris);
-        color: var(--negro);
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: var(--gris);
+      color: var(--negro);
     }
 
+    /* ===== HEADER ===== */
     header {
-        text-align: center;
-        padding: 30px 20px;
-        background: linear-gradient(180deg, var(--violeta), #6065ff, var(--verde-hoja));
-        color: white;
+      text-align: center;
+      padding: 30px 20px;
+      background: linear-gradient(180deg, #47805c, #1c5832, #00471a);
+      filter: drop-shadow(2px 4px 6px black);
+      color: white;
     }
 
     .logo {
-        width: 140px;
-        height: 140px;
-        background: white;
-        border-radius: 50%;
-        margin: 0px auto;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-weight: bold;
-        color: var(--violeta);
-        border: 5px solid white;
-        box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
+      width: 140px;
+      height: 140px;
+      background: white;
+      border-radius: 50%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: var(--violeta);
+      border: 5px solid white;
+      box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.3);
     }
 
+    /* ===== SECCIONES GENERALES ===== */
     section {
-        padding: 50px 25px 0 25px;
-        max-width: 1100px;
-        margin: auto;
+      padding: 50px 25px;
+      max-width: 1100px;
+      margin: auto;
     }
 
     .frase {
-        text-align: center;
-        font-weight: 600;
-        font-size: 1.4rem;
-        margin-bottom: 40px;
-        color: var(--violeta);
+      text-align: center;
+      font-weight: 600;
+      font-size: 1.4rem;
+      margin-bottom: 40px;
+      color: var(--violeta);
     }
 
     .descripcion {
-        font-size: 1.1rem;
-        line-height: 1.7;
-        text-align: center;
+      font-size: 1.1rem;
+      line-height: 1.7;
+      text-align: center;
     }
 
+    /* ===== BOTÓN CONTACTO ===== */
     .contacto {
-        text-align: center;
-        margin-top: 40px;
+      text-align: center;
+      margin-top: 40px;
     }
 
     .btn-w {
-        background: var(--verde-hoja);
-        color: white;
-        padding: 15px 35px;
-        border-radius: 50px;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 1.2rem;
-        font-weight: 600;
-        transition: 0.3s;
+      background: var(--verde-hoja);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 1.2rem;
+      font-weight: 600;
+      transition: 0.3s;
     }
 
     .btn-w:hover {
-        background: var(--violeta);
+      background: var(--violeta);
     }
 
-    /* GALERÍA ANTES/DESPUÉS */
+    /* ===== SERVICIOS ===== */
+    #servicios {
+      background: #f7f7fb;
+    }
+
+    .svc-wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .svc-head {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .svc-kicker {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      font-weight: 600;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--violeta);
+      background: rgba(122, 62, 255, 0.08);
+      border: 1px solid rgba(122, 62, 255, 0.25);
+      padding: 8px 12px;
+      border-radius: 999px;
+    }
+
+    .svc-title {
+      font-size: clamp(24px, 3.6vw, 36px);
+      margin: 8px 0 0;
+      color: var(--negro);
+    }
+
+    .svc-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    @media (min-width: 640px) {
+      .svc-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 960px) {
+      .svc-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background: #fff;
+      border: 1px solid var(--borde);
+      border-radius: 18px;
+      padding: 20px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 20px rgba(107, 0, 155, 0.15);
+      border-color: var(--verde-hoja);
+    }
+
+    .icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--violeta), var(--verde-hoja));
+      color: #fff;
+      font-size: 22px;
+      margin-bottom: 14px;
+    }
+
+    .card h3 {
+      font-size: 18px;
+      margin: 6px 0 8px;
+    }
+
+    .card p {
+      font-size: 14px;
+      color: #444;
+      line-height: 1.55;
+      margin: 0 0 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      background: var(--gris);
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--borde);
+      color: #333;
+    }
+
+    .cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 12px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--borde);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--violeta);
+    }
+
+    .cta:hover {
+      border-color: rgba(122, 62, 255, 0.35);
+      background: rgba(122, 62, 255, 0.06);
+    }
+
+    /* ===== GALERÍA ANTES/DESPUÉS ===== */
     .galeria {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(260px, .3fr));
-        gap: 30px;
-        margin-top: 40px;
-        justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+      justify-content: center;
     }
 
     .item-hover {
-        position: relative;
-        width: 100%;
-        overflow: hidden;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-radius: 12px;
+      box-shadow: 0 0px 20px 8px rgba(0, 0, 0, 0.15);
     }
 
     .item-hover img {
-        width: 100%;
-        display: block;
+      width: 100%;
+      display: block;
     }
 
-    /* DESPUÉS visible por defecto */
     .item-hover img.despues {
-        position: relative;
-        z-index: 1;
+      position: relative;
+      z-index: 1;
     }
 
-    /* ANTES encima pero invisible */
     .item-hover img.antes {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        opacity: 0;
-        transition: opacity .6s ease;
-        z-index: 2;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+      z-index: 2;
     }
 
-    /* Hover: mostrar ANTES */
     .item-hover:hover img.antes {
-        opacity: 1;
+      opacity: 1;
     }
 
-    /* ---- ETIQUETAS ---- */
     .label {
-        position: absolute;
-        top: 12px;
-        left: 12px;
-        padding: 6px 14px;
-        border-radius: 8px;
-        font-size: 0.95rem;
-        font-weight: 600;
-        color: white;
-        z-index: 3;
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      padding: 6px 14px;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: white;
+      z-index: 3;
     }
 
-    /* DESPUÉS visible siempre */
     .despues-label {
-        background: var(--verde-hoja);
-        opacity: 0.95;
+      background: var(--verde-hoja);
+      opacity: 0.95;
     }
 
-    /* ANTES invisible hasta hover */
     .antes-label {
-        background: var(--violeta);
-        opacity: 0;
-        transition: opacity .6s ease;
+      background: var(--violeta);
+      opacity: 0;
+      transition: opacity 0.6s ease;
     }
 
-    /* Hover: mostrar ANTES / ocultar DESPUÉS */
     .item-hover:hover .antes-label {
-        opacity: 0.95;
-    }
-    .item-hover:hover .despues-label {
-        opacity: 0;
+      opacity: 0.95;
     }
 
-    /* TESTIMONIOS */
+    .item-hover:hover .despues-label {
+      opacity: 0;
+    }
+
+    /* ===== TESTIMONIOS ===== */
     .testimonios {
-        display: flex;
-        justify-content: space-evenly;
-        flex-wrap: wrap;
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      gap: 20px;
     }
 
     .testimonio {
-        width: 250px;
-        background: white;
-        border-radius: 12px;;
-        padding: 25px;
-        margin-bottom: 20px;
-        box-shadow: 0 3px 10px rgba(0,0,0,0.12);
-        border-left: 6px solid var(--verde-hoja);
+      width: 250px;
+      background: white;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+      border-left: 6px solid var(--verde-hoja);
     }
 
     .autor {
-        margin-top: 10px;
-        font-weight: 600;
-        color: var(--violeta);
-        text-align: right;
+      margin-top: 10px;
+      font-weight: 600;
+      color: var(--violeta);
+      text-align: right;
     }
 
+    /* ===== MAPA ===== */
+    .map {
+      margin-top: 50px;
+    }
+
+    /* ===== FOOTER ===== */
     footer {
-        text-align: center;
-        padding: 30px;
-        background: #222;
-        color: white;
-        margin-top: 50px;
-        font-size: .9rem;
-        opacity: 0.85;
+      text-align: center;
+      padding: 30px;
+      background: var(--verde-hoja);
+      color: white;
+      margin-top: 50px;
+      font-size: 0.9rem;
+      opacity: 0.85;
     }
 
-    /* BOTÓN FLOANTE DE WHATSAPP */
+    /* ===== BOTÓN FLOTANTE WHATSAPP ===== */
     .whatsapp-float {
-        position: fixed;
-        width: 70px;
-        height: 70px;
-        bottom: 80px;
-        right: 25px;
-        background-color: #25d36645;
-        border-radius: 50%;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        z-index: 999;
-        transition: transform 0.3s ease;
+      position: fixed;
+      width: 70px;
+      height: 70px;
+      bottom: 80px;
+      right: 25px;
+      background-color: #25d36645;
+      border-radius: 50%;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 999;
+      transition: transform 0.3s ease;
     }
 
     .whatsapp-float img {
-        width: 38px;
-        height: 38px;
+      width: 38px;
+      height: 38px;
     }
 
     .whatsapp-float:hover {
-        transform: scale(1.12);
+      transform: scale(1.12);
     }
-</style>
+  </style>
 </head>
 
 <body>
 
-<!-- ENCABEZADO -->
-<header>
+  <!-- ENCABEZADO -->
+  <header>
     <div class="logo">LOGO</div>
     <h1>Studio AVA</h1>
     <h2>Analía Viviana Alvarez</h2>
     <p>@avabeutymakeup · Alias: investigaciones.ava</p>
-</header>
+  </header>
 
-<!-- FRASE -->
-<section>
-    <div class="frase">
-        "El cambio lo sientes por dentro, pero lo ves por fuera."
-    </div>
-
-    <!-- DESCRIPCIÓN -->
+  <!-- FRASE / DESCRIPCIÓN -->
+  <section>
+    <div class="frase">"El cambio lo sientes por dentro, pero lo ves por fuera."</div>
     <p class="descripcion">
-        Soy <strong>estilista multifacética, creativa y publicista</strong>.  
-        Me apasiona ayudarte a sentirte mejor cada día a través de tu imagen, tu estilo  
-        y la transformación que proyectas.  
+      Soy <strong>estilista multifacética, creativa y publicista</strong>.  
+      Me apasiona ayudarte a sentirte mejor cada día a través de tu imagen, tu estilo  
+      y la transformación que proyectas.
     </p>
+  </section>
 
-    <!-- BOTÓN WHATSAPP PRINCIPAL -->
-    <!-- <div class="contacto">
-        <a class="btn-w" 
-           href="https://wa.me/5491156660626"
-           target="_blank">Contáctame por WhatsApp</a>
-    </div> -->
-</section>
+  <!-- ===== SERVICIOS ===== -->
+  <section id="servicios">
+    <div class="svc-wrap">
+      <div class="svc-head">
+        <span class="svc-kicker">Servicios</span>
+        <h2 class="svc-title">Maquillaje Profesional y Experiencias de Belleza</h2>
+      </div>
 
+      <div class="svc-grid" role="list">
+        <article class="card" role="listitem">
+          <div class="icon">💄</div>
+          <h3>Maquillaje Social</h3>
+          <p>Ideal para eventos, sesiones de fotos o noches especiales. Realza tu belleza natural con un acabado impecable y duradero.</p>
+          <a class="cta" href="#contacto">Contacto</a>
+        </article>
 
-<!-- GALERÍA -->
-<section>
+        <article class="card" role="listitem">
+          <div class="icon">👰</div>
+          <h3>Maquillaje de Novia</h3>
+          <p>Diseñado para reflejar tu estilo y personalidad en uno de los días más importantes de tu vida, con prueba previa y retoques incluidos.</p>
+          <a class="cta" href="#contacto">Contacto</a>
+
+        </article>
+
+        <article class="card" role="listitem">
+          <div class="icon">📸</div>
+          <h3>Maquillaje para Sesiones Fotográficas</h3>
+          <p>Preparación de piel, iluminación y retoques adaptados a cámara para lograr una apariencia profesional en cada toma.</p>
+          <a class="cta" href="#contacto">Contacto</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GALERÍA ===== -->
+  <section>
     <h2 style="text-align:center; color:var(--violeta);">GALERÍA ANTES Y DESPUÉS</h2>
-
     <div class="galeria">
+      <div class="item-hover">
+        <span class="label despues-label">DESPUÉS</span>
+        <span class="label antes-label">ANTES</span>
+        <img src="img/despues1.webp" class="despues" alt="Después">
+        <img src="img/antes1.webp" class="antes" alt="Antes">
+      </div>
 
-        <!-- PAR 1 -->
-        <div class="item-hover">
-            <span class="label despues-label">DESPUÉS</span>
-            <span class="label antes-label">ANTES</span>
-
-            <img src="img/despues1.webp" class="despues" alt="Después">
-            <img src="img/antes1.webp" class="antes" alt="Antes">
-        </div>
-
-        <!-- PAR 2 -->
-        <div class="item-hover">
-            <span class="label despues-label">DESPUÉS</span>
-            <span class="label antes-label">ANTES</span>
-
-            <img src="/img/despues2.jpg" class="despues" alt="Después">
-            <img src="/img/antes2.jpg" class="antes" alt="Antes">
-        </div>
-
+      <div class="item-hover">
+        <span class="label despues-label">DESPUÉS</span>
+        <span class="label antes-label">ANTES</span>
+        <img src="img/despues2.jpg" class="despues" alt="Después">
+        <img src="img/antes2.jpg" class="antes" alt="Antes">
+      </div>
     </div>
-</section>
+  </section>
 
+  <!-- ===== MAPA ===== -->
+  <section class="map">
+    <h2 style="text-align:center; color:var(--violeta);">Nuestra Ubicación</h2>
+    <div style="position:relative;padding-bottom:56.25%;height:0;overflow:hidden;border-radius:10px;">
+      <iframe
+        title="Ubicación de Studio AVA"
+        decoding="async"
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13330490.887300106!2d-17.586898635722577!3d35.34287889431434!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc42e3783261bc8b%3A0xa6ec2c940768a3ec!2zRXNwYcOxYQ!5e0!3m2!1ses-419!2smx!4v1762916202899!5m2!1ses-419!2smx"
+        style="border:0;position:absolute;top:0;left:0;width:100%;height:100%;"
+        allowfullscreen
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </section>
 
-<!-- TESTIMONIOS -->
-<h2 style="text-align:center; color:var(--violeta);margin-top: 70px;">TESTIMONIOS</h2>
-<section class="testimonios">
+  <!-- ===== TESTIMONIOS ===== -->
+  <h2 style="text-align:center; color:var(--violeta);margin-top: 70px;">TESTIMONIOS</h2>
+  <section class="testimonios">
+    <div class="testimonio">
+      <p>"Increíble experiencia. Analía entendió perfecto lo que quería y el resultado superó mis expectativas."</p>
+      <div class="autor">— Daniela R.</div>
+    </div>
 
     <div class="testimonio">
-        <p>"Increíble experiencia. Analía entendió perfecto lo que quería y el resultado superó mis expectativas."</p>
-        <div class="autor">— Daniela R.</div>
+      <p>"Su trabajo es impecable. Profesional, amable y muy creativa. La recomiendo totalmente."</p>
+      <div class="autor">— Marlene H.</div>
     </div>
 
     <div class="testimonio">
-        <p>"Su trabajo es impecable. Profesional, amable y muy creativa. La recomiendo totalmente."</p>
-        <div class="autor">— Marlene H.</div>
+      <p>"Nunca me había sentido tan segura de mi imagen. Volveré sin dudarlo."</p>
+      <div class="autor">— Sofía L.</div>
     </div>
+  </section>
 
-    <div class="testimonio">
-        <p>"Nunca me había sentido tan segura de mi imagen. Volveré sin dudarlo."</p>
-        <div class="autor">— Sofía L.</div>
-    </div>
-</section>
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    © 2025 Studio AVA — Todos los derechos reservados.<br>
+    Página desarrollada por <strong>S Quetzal Digital</strong>.
+  </footer>
 
-
-<footer>
-    Página demo desarrollada por S Quetzal Digital · 2025
-</footer>
-
-<!-- BOTÓN FLOTANTE WHATSAPP -->
-<a href="https://wa.me/5491156660626" 
-   class="whatsapp-float" 
-   target="_blank">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" 
-         alt="WhatsApp">
-</a>
+  <!-- ===== BOTÓN WHATSAPP ===== -->
+  <a href="https://wa.me/5491156660626" class="whatsapp-float" target="_blank" aria-label="Chat por WhatsApp con Studio AVA">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp">
+  </a>
 
 </body>
 </html>
